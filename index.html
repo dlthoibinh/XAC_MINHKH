@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Xác Minh KH</title>
+  <title>Xác Minh KH</title>
 
-  <!-- Manifest & PWA -->
-  <link rel="manifest" href="manifest.webmanifest">
+  <!-- Manifest & PWA (dùng path tuyệt đối cho GitHub Pages) -->
+  <link rel="manifest" href="/XAC_MINHKH/manifest.webmanifest">
   <meta name="theme-color" content="#0ea5e9">
-  <link rel="apple-touch-icon" href="evn_logo.png">
+
+  <!-- Icon iOS/Android -->
+  <link rel="apple-touch-icon" href="/XAC_MINHKH/icon-192-any.png">
   <link rel="canonical" href="https://dlthoibinh.github.io/XAC_MINHKH/">
 
   <!-- iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <!-- CSP: cấm mixed-content, chỉ cho phép những domain cần -->
+  <!-- CSP -->
   <meta http-equiv="Content-Security-Policy"
         content="
           default-src 'self';
@@ -28,7 +30,6 @@
           form-action 'none';
           block-all-mixed-content;
         ">
-
 
   <style>
     html,body{height:100%;margin:0;background:#f6f7fb;font-family:system-ui,Roboto,Arial}
@@ -59,19 +60,24 @@
   </div>
 
   <script>
-    const BASE = (location.pathname.endsWith('/')
-      ? location.pathname
-      : location.pathname.replace(/\/[^/]*$/, '/'));
+    // Hard-code BASE cho GitHub Pages
+    const BASE = '/XAC_MINHKH/';
 
+    // Đăng ký Service Worker
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(BASE + 'sw.js', { scope: BASE })
-        .then(r => console.log('SW registered:', r.scope))
-        .catch(e => console.warn('SW register failed:', e));
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register(BASE + 'sw.js', { scope: BASE })
+          .then(r => console.log('SW registered:', r.scope))
+          .catch(e => console.warn('SW register failed:', e));
+      });
     }
 
-    const setOfflineUI = on => document.getElementById('offline').classList.toggle('show', !!on);
-    addEventListener('online',  ()=>setOfflineUI(false));
-    addEventListener('offline', ()=>setOfflineUI(true));
+    // UI offline
+    const setOfflineUI = on =>
+      document.getElementById('offline').classList.toggle('show', !!on);
+
+    window.addEventListener('online',  () => setOfflineUI(false));
+    window.addEventListener('offline', () => setOfflineUI(true));
     setOfflineUI(!navigator.onLine);
   </script>
 </body>
