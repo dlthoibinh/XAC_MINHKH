@@ -1,7 +1,7 @@
 {
   "id": "/XAC_MINHKH/",
   "name": "Xác Minh KH",
-  "short_name": "Xác Minh",
+  "short_name": "Xác Minh KH TB",
   "description": "Xác Minh KH đúng hay không",
   "start_url": "/XAC_MINHKH/index.html?source=pwa",
   "scope": "/XAC_MINHKH/",
