@@ -1,8 +1,8 @@
 {
   "id": "/XAC_MINHKH/",
-  "name": "Xác Minh KH",
-  "short_name": "Xác Minh KH TB",
-  "description": "Xác Minh KH đúng hay không",
+  "name": "Xác Minh KH",
+  "short_name": "Xác Minh",
+  "description": "Xác minh thông tin khách hàng EVN-SPC",
   "start_url": "/XAC_MINHKH/index.html?source=pwa",
   "scope": "/XAC_MINHKH/",
   "display": "standalone",
@@ -17,10 +17,30 @@
     "client_mode": "navigate-existing"
   },
   "icons": [
-    { "src": "icon-192-any.png",   "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icon-512-any.png",   "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
-    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "icon-192-any.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512-any.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ],
   "prefer_related_applications": false
 }
